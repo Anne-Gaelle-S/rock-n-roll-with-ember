@@ -1,0 +1,14 @@
+{{page-title "Songs"}}
+
+<ul>
+  {{#each
+    (array
+      (hash title="Black Dog" band="Led Zeppelin" rating=3)
+      (hash title="Yellow Ledbetter" band="Pearl Jam" rating=4)
+      (hash title="The Pretender" band="Foo Fighters" rating=2)
+    ) as |song| }}
+    <li class="leading-loose">
+      {{song.title}} by {{song.band}} <span class="float-right">{{song.rating}}</span>
+    </li>
+  {{/each}}
+</ul>
