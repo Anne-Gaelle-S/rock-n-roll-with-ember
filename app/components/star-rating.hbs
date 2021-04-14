@@ -1,3 +1,5 @@
 {{#each this.stars as |star|}}
-  {{if star.full "X" "O"}}
+  {{#each this.stars as |star|}}
+    <FaIcon @icon="star" @prefix={{if star.full "fas" "far" }} />
+  {{/each}}
 {{/each}}
