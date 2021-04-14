@@ -8,7 +8,10 @@
       (hash title="The Pretender" band="Foo Fighters" rating=2)
     ) as |song| }}
     <li class="leading-loose">
-      {{song.title}} by {{song.band}} <span class="float-right">{{song.rating}}</span>
+      {{song.title}} by {{song.band}}
+      <span class="float-right">
+        <StarRating @rating={{song.rating}} />
+      </span>
     </li>
   {{/each}}
 </ul>
