@@ -12,7 +12,7 @@ class Band {
 }
 
 class Song {
-  constructeur({ title, rating, band }) {
+  constructor({ title, rating, band }) {
     this.title = title;
     this.rating = rating;
     this.band = band;
