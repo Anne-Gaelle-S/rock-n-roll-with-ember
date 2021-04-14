@@ -1,20 +1,18 @@
 {{page-title "Songs | Rock & Roll with Octane" replace=true}}
 
-<ul>
-  {{#each
-    (array
-      (hash title="Black Dog" band="Led Zeppelin" rating=3)
-      (hash title="Yellow Ledbetter" band="Pearl Jam" rating=4)
-      (hash title="The Pretender" band="Foo Fighters" rating=2)
-    ) as |song| }}
-    <li class="leading-loose">
-      {{song.title}} by {{song.band}}
-      <span class="float-right">
-        <StarRating
-          @rating={{song.rating}}
-          @onUpdate={{set song "rating"}}
-        />
-      </span>
-    </li>
-  {{/each}}
-</ul>
+{{#if @model.length}}
+  <ul>
+    {{#each @model as |song|}}
+      <li class="mb-2">
+        {{song.title}}
+        <span class="float-right">
+          <StarRating @rating={{song.rating}} @onUpdate={{set song "rating" }} />
+        </span>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p class="text-center">
+    The band has no songs yet.
+  </p>
+{{/if}}
