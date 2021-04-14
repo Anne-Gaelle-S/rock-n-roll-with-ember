@@ -1,5 +1,5 @@
 {{#each this.stars as |star|}}
-  {{#each this.stars as |star|}}
+  <button type="button" {{on "click" (fn @onUpdate star.rating)}}>
     <FaIcon @icon="star" @prefix={{if star.full "fas" "far" }} />
-  {{/each}}
+  </button>
 {{/each}}
