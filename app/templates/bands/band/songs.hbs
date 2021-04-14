@@ -10,7 +10,10 @@
     <li class="leading-loose">
       {{song.title}} by {{song.band}}
       <span class="float-right">
-        <StarRating @rating={{song.rating}} />
+        <StarRating
+          @rating={{song.rating}}
+          @onUpdate={{set song "rating"}}
+        />
       </span>
     </li>
   {{/each}}
